@@ -43,5 +43,34 @@ public class Main {
                 case 1:
                     System.out.println(currentAccount.displayBalance());
                     break;
+                case 2:
+                    System.out.print("Enter the amount to be withdrawn: ");
+                    double withdrawAmount = scanner.nextDouble();
+                    System.out.println(currentAccount.withdraw(withdrawAmount));
+                    break;
+                case 3:
+                    System.out.print("Enter the amount to be deposited: ");
+                    double depositAmount = scanner.nextDouble();
+                    System.out.println(currentAccount.deposit(depositAmount));
+                    break;
+                case 4:
+                    if (currentAccount instanceof SavingsAccount) {
+                        SavingsAccount sa = (SavingsAccount) currentAccount;
+                        System.out.println(sa.addInterest());
+                    } else {
+                        System.out.println("This operation is only available for Savings Accounts.");
+                    }
+                    break;
+                case 5:
+                    if (currentAccount instanceof CheckingAccount) {
+                        CheckingAccount ca = (CheckingAccount) currentAccount;
+                        System.out.println("Your overdraft limit is: " + ca.overdraftLimit);
+                    } else {
+                        System.out.println("This operation is only available for Checking Accounts.");
+                    }
+                    break;
+                case 0:
+                    System.out.println("Goodbye!");
+                    break;
                 
 }
