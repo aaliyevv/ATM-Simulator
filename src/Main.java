@@ -72,5 +72,12 @@ public class Main {
                 case 0:
                     System.out.println("Goodbye!");
                     break;
-                
+                default:
+                    System.out.println("Invalid selection, try again");
+                    break;
+            }
+        } while (choice != 0);
+
+        scanner.close();
+    }
 }
